@@ -1,3 +1,3 @@
-struct JesseImageLoader {
+public struct JesseImageLoader {
     var text = "Hello, World!"
 }
