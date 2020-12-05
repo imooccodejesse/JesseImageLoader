@@ -1,4 +1,4 @@
-public struct JesseImageLoader {
-    var text = "Hello, World!"
+struct JesseImageLoader {
+    public var text = "Hello, World!"
     public init() {}
 }
