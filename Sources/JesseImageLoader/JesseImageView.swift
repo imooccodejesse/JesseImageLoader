@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct JesseImageView<Placeholder: View>: View {
+public struct JesseImageView<Placeholder: View>: View {
     @StateObject private var loader: JesseImageLoader
     private let placeholder: Placeholder
     private let image: (UIImage) -> Image
     
-    init(
+    public init(
         url: URL,
         @ViewBuilder placeholder: () -> Placeholder,
         @ViewBuilder image: @escaping (UIImage) -> Image = Image.init(uiImage:)
@@ -22,7 +22,7 @@ struct JesseImageView<Placeholder: View>: View {
         _loader = StateObject(wrappedValue: JesseImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue))
     }
     
-    var body: some View {
+    public var body: some View {
         content
             .onAppear(perform: loader.load)
     }
